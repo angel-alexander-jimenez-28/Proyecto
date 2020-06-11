@@ -1,0 +1,31 @@
+INSERT INTO `consejo_comunal_db`.`familia` (
+	`id_Familiar`,
+    `id_Hogar`,
+    `Nro_Manzana`,
+    `1er_Nombre_Manzanera`,
+    `2do_Nombre_Manzanera`,
+    `1er_Apellido_Manzanera`,
+    `2do_Apellido_Manzanera`,
+    `Tipo_Vivienda`,
+    `Vulnerabilidad_Familiar`,
+    `Proteccion_Alimenticia`,
+    `Tipo_Mascota`,
+    `TIpo_Gas`,
+    `Nro_Bombonas`,
+    `Nro_Carga_Familiar`)
+VALUES (
+	'F-00002',
+    '2', 
+    '2',
+    'Eldgar',
+    'Gajhoo',
+    'Dhegar',
+    'ghanTha',
+    'n',
+    'Tos y gripes ',
+    's',
+    'd',
+    '2',
+    '1',
+    '3'
+);

@@ -445,13 +445,8 @@ public class MainWindowController
                 }
             }
         }else if(e.getSource().equals(Btn_Registrar)){
-            String nombre1 = "";
-            String nombre2 = "";
-            String apellido1 = "";
-            String apellido2 = "";
-            String fullfecha = "";
-            String cedula = "";
-            int edad = 0;
+            String nombre1,nombre2,apellido1,apellido2,fullfecha,cedula;
+            int edad;
             try{
                 tools.Dialog.MessageDialog("Acontinuacion se estaran pidiendo sus datos:\n"
                         + "cedula\nNombres\nApellidos\nFecha de Nacimiento\ny su edad");
@@ -479,12 +474,13 @@ public class MainWindowController
                         new HabitanteVO(
                             cedula,nombre1,nombre2,apellido1,apellido2,fullfecha,edad
                         ))){
-                    MostrarInformacion("Habitante Registrado!", "confirmar-green-icon");
+                    MostrarInformacion("Habitante Registrado.", "confirmar-green-icon");
+                    TablaDatos.setModel(HabitanteDAO_ConsultasCRUD.habitantesTabulados());
                 }else {
-                    MostrarInformacion("Error al registrar", "denegar-red-icon");
+                    MostrarInformacion("Habitante ya registrado.", "denegar-red-icon");
                 }
             }catch(NullPointerException npe){
-                MostrarInformacion("Operacion Cancelada", "denegar-red-icon");
+                MostrarInformacion("Operacion Cancelada!", "warning-yellow-icon");
             }
         }
     }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 
 /**
@@ -11,6 +6,7 @@ package Modelo;
  */
 public class HabitanteVO {
     
+    private String cedula;
     private String primerNombre;
     private String segundoNombre;
     private String primerApellido;
@@ -21,19 +17,30 @@ public class HabitanteVO {
     public HabitanteVO() {
     }
 
-    public HabitanteVO(String primerNombre,
-                       String segundoNombre,
-                       String primerApellido,
-                       String segundoApellido,
-                       String fechaNacimiento,
-                       int edad) {
+    public HabitanteVO(
+            String cedula,
+            String primerNombre,
+            String segundoNombre,
+            String primerApellido,
+            String segundoApellido,
+            String fechaNacimiento,
+            int edad) {
         
+        this.cedula = cedula;
         this.primerNombre = primerNombre;
         this.segundoNombre = segundoNombre;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
         this.fechaNacimiento = fechaNacimiento;
         this.edad = edad;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 
     public String getPrimerNombre() {

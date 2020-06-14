@@ -1,6 +1,7 @@
 package Control;
 import Modelo.UsuarioVO;
 import Conexion.*;
+import Modelo.HabitanteVO;
 import Vista.MainWindow;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -444,7 +445,21 @@ public class MainWindowController
                 }
             }
         }else if(e.getSource().equals(Btn_Registrar)){
-            System.out.println("hola desde registrar habitantes");
+            if(HabitanteDAO_ConsultasCRUD.
+                Registrar(
+                    new HabitanteVO(
+                        "12345678",
+                        "angel",
+                        "alexander",
+                        "jimenez",
+                        "ortiz",
+                        "1991-12-01",
+                        28))
+                ){
+                MostrarInformacion("Habitante Registrado!", "confirmar-green-icon");
+            }else {
+                MostrarInformacion("Este Habitante Ya Existe!", "denegar-red-icon");
+            }
         }
     }
     

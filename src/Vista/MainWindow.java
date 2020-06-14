@@ -79,6 +79,17 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         PanelConfiguracion = new javax.swing.JPanel();
         PanelReportes = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        CmbFiltroUno = new javax.swing.JComboBox<>();
+        CmbFiltroUno1 = new javax.swing.JComboBox<>();
+        CmbFiltroUno2 = new javax.swing.JComboBox<>();
+        CmbFiltroUno3 = new javax.swing.JComboBox<>();
+        CmbFiltroUno4 = new javax.swing.JComboBox<>();
+        Btn_Registrar = new javax.swing.JButton();
+        Btn_Buscar = new javax.swing.JButton();
+        Btn_Modificar = new javax.swing.JButton();
+        Btn_Eliminar = new javax.swing.JButton();
         PanelAcerca = new javax.swing.JPanel();
         PanelBarraMenu = new javax.swing.JPanel();
 
@@ -598,17 +609,96 @@ public class MainWindow extends javax.swing.JFrame {
         PanelReportes.setMaximumSize(new java.awt.Dimension(700, 400));
         PanelReportes.setMinimumSize(new java.awt.Dimension(700, 400));
         PanelReportes.setPreferredSize(new java.awt.Dimension(700, 400));
+        PanelReportes.setLayout(null);
 
-        javax.swing.GroupLayout PanelReportesLayout = new javax.swing.GroupLayout(PanelReportes);
-        PanelReportes.setLayout(PanelReportesLayout);
-        PanelReportesLayout.setHorizontalGroup(
-            PanelReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
-        );
-        PanelReportesLayout.setVerticalGroup(
-            PanelReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
+        jTable1.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        PanelReportes.add(jScrollPane1);
+        jScrollPane1.setBounds(240, 10, 450, 220);
+
+        CmbFiltroUno.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        CmbFiltroUno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione:" }));
+        CmbFiltroUno.setMaximumSize(new java.awt.Dimension(220, 40));
+        CmbFiltroUno.setMinimumSize(new java.awt.Dimension(220, 40));
+        CmbFiltroUno.setPreferredSize(new java.awt.Dimension(220, 40));
+        PanelReportes.add(CmbFiltroUno);
+        CmbFiltroUno.setBounds(10, 10, 220, 40);
+
+        CmbFiltroUno1.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        CmbFiltroUno1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione:" }));
+        CmbFiltroUno1.setMaximumSize(new java.awt.Dimension(220, 40));
+        CmbFiltroUno1.setMinimumSize(new java.awt.Dimension(220, 40));
+        CmbFiltroUno1.setPreferredSize(new java.awt.Dimension(220, 40));
+        PanelReportes.add(CmbFiltroUno1);
+        CmbFiltroUno1.setBounds(10, 55, 220, 40);
+
+        CmbFiltroUno2.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        CmbFiltroUno2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione:" }));
+        CmbFiltroUno2.setMaximumSize(new java.awt.Dimension(220, 40));
+        CmbFiltroUno2.setMinimumSize(new java.awt.Dimension(220, 40));
+        CmbFiltroUno2.setPreferredSize(new java.awt.Dimension(220, 40));
+        PanelReportes.add(CmbFiltroUno2);
+        CmbFiltroUno2.setBounds(10, 100, 220, 40);
+
+        CmbFiltroUno3.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        CmbFiltroUno3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione:" }));
+        CmbFiltroUno3.setMaximumSize(new java.awt.Dimension(220, 40));
+        CmbFiltroUno3.setMinimumSize(new java.awt.Dimension(220, 40));
+        CmbFiltroUno3.setPreferredSize(new java.awt.Dimension(220, 40));
+        PanelReportes.add(CmbFiltroUno3);
+        CmbFiltroUno3.setBounds(10, 145, 220, 40);
+
+        CmbFiltroUno4.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        CmbFiltroUno4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione:" }));
+        CmbFiltroUno4.setMaximumSize(new java.awt.Dimension(220, 40));
+        CmbFiltroUno4.setMinimumSize(new java.awt.Dimension(220, 40));
+        CmbFiltroUno4.setPreferredSize(new java.awt.Dimension(220, 40));
+        PanelReportes.add(CmbFiltroUno4);
+        CmbFiltroUno4.setBounds(10, 190, 220, 40);
+
+        Btn_Registrar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        Btn_Registrar.setText("Registrar");
+        Btn_Registrar.setMaximumSize(new java.awt.Dimension(160, 40));
+        Btn_Registrar.setMinimumSize(new java.awt.Dimension(160, 40));
+        Btn_Registrar.setPreferredSize(new java.awt.Dimension(160, 40));
+        PanelReportes.add(Btn_Registrar);
+        Btn_Registrar.setBounds(10, 240, 160, 40);
+
+        Btn_Buscar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        Btn_Buscar.setText("Buscar");
+        Btn_Buscar.setMaximumSize(new java.awt.Dimension(160, 40));
+        Btn_Buscar.setMinimumSize(new java.awt.Dimension(160, 40));
+        Btn_Buscar.setPreferredSize(new java.awt.Dimension(160, 40));
+        PanelReportes.add(Btn_Buscar);
+        Btn_Buscar.setBounds(180, 240, 160, 40);
+
+        Btn_Modificar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        Btn_Modificar.setText("Modificar");
+        Btn_Modificar.setMaximumSize(new java.awt.Dimension(160, 40));
+        Btn_Modificar.setMinimumSize(new java.awt.Dimension(160, 40));
+        Btn_Modificar.setPreferredSize(new java.awt.Dimension(160, 40));
+        PanelReportes.add(Btn_Modificar);
+        Btn_Modificar.setBounds(350, 240, 160, 40);
+
+        Btn_Eliminar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        Btn_Eliminar.setText("Eliminar");
+        Btn_Eliminar.setMaximumSize(new java.awt.Dimension(160, 40));
+        Btn_Eliminar.setMinimumSize(new java.awt.Dimension(160, 40));
+        Btn_Eliminar.setPreferredSize(new java.awt.Dimension(160, 40));
+        PanelReportes.add(Btn_Eliminar);
+        Btn_Eliminar.setBounds(520, 240, 160, 40);
 
         PanelVentanas.add(PanelReportes);
         PanelReportes.setBounds(0, 400, 700, 400);
@@ -672,6 +762,15 @@ public class MainWindow extends javax.swing.JFrame {
     public javax.swing.JButton BtnReportes;
     public javax.swing.JButton BtnSiguiente;
     public javax.swing.JButton BtnUsuario;
+    private javax.swing.JButton Btn_Buscar;
+    private javax.swing.JButton Btn_Eliminar;
+    private javax.swing.JButton Btn_Modificar;
+    private javax.swing.JButton Btn_Registrar;
+    private javax.swing.JComboBox<String> CmbFiltroUno;
+    private javax.swing.JComboBox<String> CmbFiltroUno1;
+    private javax.swing.JComboBox<String> CmbFiltroUno2;
+    private javax.swing.JComboBox<String> CmbFiltroUno3;
+    private javax.swing.JComboBox<String> CmbFiltroUno4;
     public javax.swing.JLabel LabelPasos;
     public javax.swing.JPanel PanelAcerca;
     public javax.swing.JPanel PanelApellidos;
@@ -713,7 +812,9 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }

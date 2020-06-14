@@ -5,6 +5,10 @@ import static Conexion.Conexion.pstm;
 import static Conexion.Conexion.rs;
 import Modelo.HabitanteVO;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -55,5 +59,50 @@ public class HabitanteDAO_ConsultasCRUD extends Conexion{
             }
         }
     }
-    
+    public static DefaultTableModel habitantesTabulados(){
+        
+        ArrayList<HabitanteVO> habitantes = new ArrayList<>();
+        String[][] datosHabitantes; 
+        try {
+            String sql = "SELECT * FROM habitante";
+            pstm = con.prepareStatement(sql);
+            rs = ExecuteSearch(pstm);
+            while(rs.next()){
+                habitantes.add(
+                    new HabitanteVO(
+                        rs.getString("id_cedula_h"),
+                        rs.getString("Primer_Nombre"),
+                        rs.getString("Segundo_Nombre"),
+                        rs.getString("Primer_Apellido"),
+                        rs.getString("Segundo_Apellido"),
+                        rs.getString("Fecha_Nacimiento"),
+                        rs.getInt("Edad"))
+                );
+            } datosHabitantes = new String[habitantes.size()][7];
+            
+            for(int i = 0;i < habitantes.size() ; i++){
+                datosHabitantes[i][0] = habitantes.get(i).getCedula();
+                datosHabitantes[i][1] = habitantes.get(i).getPrimerNombre();
+                datosHabitantes[i][2] = habitantes.get(i).getSegundoNombre();
+                datosHabitantes[i][3] = habitantes.get(i).getPrimerApellido();
+                datosHabitantes[i][4] = habitantes.get(i).getSegundoApellido();
+                datosHabitantes[i][5] = habitantes.get(i).getFechaNacimiento();
+                datosHabitantes[i][6] = ""+habitantes.get(i).getEdad();
+            }
+            
+            return new DefaultTableModel(
+                    datosHabitantes,
+                    new String[]{
+                        "Cedula",
+                        "1er Nombre","2do Nombre",
+                        "1er Apellido","2do Apellido",
+                        "F. Nacimiento","Edad"
+                    }
+            );
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(HabitanteDAO_ConsultasCRUD.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
 }

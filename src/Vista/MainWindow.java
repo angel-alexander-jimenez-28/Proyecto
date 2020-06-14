@@ -766,11 +766,11 @@ public class MainWindow extends javax.swing.JFrame {
     public javax.swing.JButton Btn_Eliminar;
     public javax.swing.JButton Btn_Modificar;
     public javax.swing.JButton Btn_Registrar;
-    private javax.swing.JComboBox<String> CmbFiltroUno;
-    private javax.swing.JComboBox<String> CmbFiltroUno1;
-    private javax.swing.JComboBox<String> CmbFiltroUno2;
-    private javax.swing.JComboBox<String> CmbFiltroUno3;
-    private javax.swing.JComboBox<String> CmbFiltroUno4;
+    public javax.swing.JComboBox<String> CmbFiltroUno;
+    public javax.swing.JComboBox<String> CmbFiltroUno1;
+    public javax.swing.JComboBox<String> CmbFiltroUno2;
+    public javax.swing.JComboBox<String> CmbFiltroUno3;
+    public javax.swing.JComboBox<String> CmbFiltroUno4;
     public javax.swing.JLabel LabelPasos;
     public javax.swing.JPanel PanelAcerca;
     public javax.swing.JPanel PanelApellidos;

@@ -445,20 +445,46 @@ public class MainWindowController
                 }
             }
         }else if(e.getSource().equals(Btn_Registrar)){
-            if(HabitanteDAO_ConsultasCRUD.
-                Registrar(
-                    new HabitanteVO(
-                        "12345678",
-                        "angel",
-                        "alexander",
-                        "jimenez",
-                        "ortiz",
-                        "1991-12-01",
-                        28))
-                ){
-                MostrarInformacion("Habitante Registrado!", "confirmar-green-icon");
-            }else {
-                MostrarInformacion("Este Habitante Ya Existe!", "denegar-red-icon");
+            String nombre1 = "";
+            String nombre2 = "";
+            String apellido1 = "";
+            String apellido2 = "";
+            String fullfecha = "";
+            String cedula = "";
+            int edad = 0;
+            try{
+                tools.Dialog.MessageDialog("Acontinuacion se estaran pidiendo sus datos:\n"
+                        + "cedula\nNombres\nApellidos\nFecha de Nacimiento\ny su edad");
+
+                nombre1 = tools.Dialog.InputDialogForLettersOnly("Ingrese el primer nombre");
+                nombre2 = tools.Dialog.InputDialogForLettersOnly("Ingrese el segundo nombre");
+                apellido1 = tools.Dialog.InputDialogForLettersOnly("Ingrese el primer apellido");
+                apellido2 = tools.Dialog.InputDialogForLettersOnly("Ingrese el segundo apellido");
+
+                tools.Dialog.MessageDialog("Acontinuacion se estaran pidiendo la fecha\n"
+                        + " en el formato AAAA-MM-DD (Año-mes-dia) ");
+
+                String anio =  tools.Dialog.InputForShortNumbersOnly("ingrese su año de nacimiento:")+"-";
+                String mes =  tools.Dialog.InputForShortNumbersOnly("ingrese su mes de nacimiento:")+"-";
+                String dia =  tools.Dialog.InputForShortNumbersOnly("ingrese su dia de nacimiento:")+"";
+
+                fullfecha = anio+mes+dia;
+
+                edad = tools.Dialog.InputForShortNumbersOnly("ingrese su edad:");
+                tools.Dialog.MessageDialog("muy bien ahora solo continue he ingrese su cedula");
+                cedula = tools.Dialog.InputForNumbersOnlyToString("Cedula: ");
+                
+                if(HabitanteDAO_ConsultasCRUD.
+                    Registrar(
+                        new HabitanteVO(
+                            cedula,nombre1,nombre2,apellido1,apellido2,fullfecha,edad
+                        ))){
+                    MostrarInformacion("Habitante Registrado!", "confirmar-green-icon");
+                }else {
+                    MostrarInformacion("Error al registrar", "denegar-red-icon");
+                }
+            }catch(NullPointerException npe){
+                MostrarInformacion("Operacion Cancelada", "denegar-red-icon");
             }
         }
     }

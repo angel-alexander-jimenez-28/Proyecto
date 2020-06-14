@@ -97,8 +97,12 @@ public class MainWindowController
         
         BtnGuardarNuevoUsuario.addActionListener(this);
         
+        Btn_Registrar.addActionListener(this);
+        
         PanelMensajes.addMouseListener(this);
     }
+
+//------------------------------------------------------------------------------    
     
     @Override
     public void mousePressed(MouseEvent e) {}
@@ -151,7 +155,7 @@ public class MainWindowController
             OcultarInformacion("hide-msg-green-icon");
         }
     }
-
+//------------------------------------------------------------------------------
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(BtnUsuario)){
@@ -439,6 +443,8 @@ public class MainWindowController
                     limpiarCamposNuevoUsuario();
                 }
             }
+        }else if(e.getSource().equals(Btn_Registrar)){
+            System.out.println("hola desde registrar habitantes");
         }
     }
     

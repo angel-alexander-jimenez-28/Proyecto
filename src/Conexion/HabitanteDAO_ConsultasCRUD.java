@@ -8,7 +8,7 @@ import static Conexion.Conexion.con;
 import static Conexion.Conexion.getConexion;
 import static Conexion.Conexion.pstm;
 import static Conexion.Conexion.rs;
-import Modelo.UsuarioVO;
+import Modelo.HabitanteVO;
 import java.sql.SQLException;
 
 /**
@@ -19,34 +19,33 @@ import java.sql.SQLException;
 public class HabitanteDAO_ConsultasCRUD extends Conexion{
     
     
-    private static boolean Existe(UsuarioVO usuario) throws SQLException {
+    private static boolean Existe(HabitanteVO habitante) throws SQLException {
         String sql = "SELECT * FROM habitante WHERE id_cedula_h=? ";
         pstm = con.prepareStatement(sql);
-        pstm.setString(1, usuario.getCedula());
+        pstm.setString(1, habitante.getCedula());
         rs = ExecuteSearch(pstm);
         if(rs.next()) return true;
         else return false;
     }
     
-    public static boolean Registrar(UsuarioVO usuario) {
+    public static boolean Registrar(HabitanteVO habitante) {
         con = getConexion();
-        String sql="INSERT INTO usuario"
-                 + "(id_Usuario_Cedula,"
+        String sql="INSERT INTO habitante"
+                 + "(id_cedula_h,"
                  +   "Primer_Nombre,Segundo_Nombre,"
                  +   "Primer_Apellido,Segundo_Apellido,"
-                 +   "Correo,Nombre_Acceso,Clave_Acceso)"
-                 + "VALUES(?,?,?,?,?,?,?,?)";
+                 +   "Fecha_Nacimiento,Edad)"
+                 + "VALUES(?,?,?,?,?,?,?)";
         try {
-            if(!Existe(usuario)){
+            if(!Existe(habitante)){
                 pstm = con.prepareStatement(sql);
-                pstm.setString(1, usuario.getCedula());
-                pstm.setString(2, usuario.getNombre1());
-                pstm.setString(3, usuario.getNombre2());
-                pstm.setString(4, usuario.getApellido1());
-                pstm.setString(5, usuario.getApellido2());
-                pstm.setString(6, usuario.getCorreo());
-                pstm.setString(7, usuario.getNombreUsuario());
-                pstm.setString(8, usuario.getClaveUsuario());
+                pstm.setString(1, habitante.getCedula());
+                pstm.setString(2, habitante.getPrimerNombre());
+                pstm.setString(3, habitante.getSegundoNombre());
+                pstm.setString(4, habitante.getPrimerApellido());
+                pstm.setString(5, habitante.getSegundoApellido());
+                pstm.setString(6, habitante.getFechaNacimiento());
+                pstm.setInt   (7, habitante.getEdad());
                 ExecuteInsert(pstm);
                 return true;
             }else return false;

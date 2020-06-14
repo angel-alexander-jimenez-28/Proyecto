@@ -611,7 +611,7 @@ public class MainWindow extends javax.swing.JFrame {
         PanelReportes.setPreferredSize(new java.awt.Dimension(700, 400));
         PanelReportes.setLayout(null);
 
-        TablaDatos.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        TablaDatos.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         TablaDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

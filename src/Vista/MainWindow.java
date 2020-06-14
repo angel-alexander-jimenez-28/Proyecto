@@ -80,7 +80,7 @@ public class MainWindow extends javax.swing.JFrame {
         PanelConfiguracion = new javax.swing.JPanel();
         PanelReportes = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablaDatos = new javax.swing.JTable();
         CmbFiltroUno = new javax.swing.JComboBox<>();
         CmbFiltroUno1 = new javax.swing.JComboBox<>();
         CmbFiltroUno2 = new javax.swing.JComboBox<>();
@@ -611,19 +611,16 @@ public class MainWindow extends javax.swing.JFrame {
         PanelReportes.setPreferredSize(new java.awt.Dimension(700, 400));
         PanelReportes.setLayout(null);
 
-        jTable1.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablaDatos.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        TablaDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Realice una", "Consulta", "Para cargar", "La Tabla"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TablaDatos);
 
         PanelReportes.add(jScrollPane1);
         jScrollPane1.setBounds(240, 10, 450, 220);
@@ -788,6 +785,7 @@ public class MainWindow extends javax.swing.JFrame {
     public javax.swing.JPanel PanelUsuarios;
     public javax.swing.JPanel PanelVentanas;
     private javax.swing.JPanel SinFuncion;
+    public javax.swing.JTable TablaDatos;
     public javax.swing.JPasswordField TxtClaveNuevoUsuario;
     public javax.swing.JPasswordField TxtClaveUsuario;
     public javax.swing.JPasswordField TxtConfClaveNuevoUsuario;
@@ -814,7 +812,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }

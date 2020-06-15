@@ -71,6 +71,9 @@ public class MainWindowController
         SoloLetras(TxtUApellidoUno);
         SoloLetras(TxtUApellidoDos);
         SoloNumeros(TxtUCedula);
+        
+        //cargar habitantes
+        TablaDatos.setModel(HabitanteDAO_ConsultasCRUD.habitantesTabulados());
     }
     
     private void addListenersToButtons(){//Activamos las escuchas a eventos

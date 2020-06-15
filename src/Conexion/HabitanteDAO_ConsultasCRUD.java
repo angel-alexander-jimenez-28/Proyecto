@@ -59,12 +59,14 @@ public class HabitanteDAO_ConsultasCRUD extends Conexion{
             }
         }
     }
+    
     public static DefaultTableModel habitantesTabulados(){
         
         ArrayList<HabitanteVO> habitantes = new ArrayList<>();
         String[][] datosHabitantes; 
         try {
             String sql = "SELECT * FROM habitante";
+            con = getConexion();
             pstm = con.prepareStatement(sql);
             rs = ExecuteSearch(pstm);
             while(rs.next()){
@@ -98,11 +100,16 @@ public class HabitanteDAO_ConsultasCRUD extends Conexion{
                         "1er Apellido","2do Apellido",
                         "F. Nacimiento","Edad"
                     }
-            );
+                );
             
         } catch (SQLException ex) {
             Logger.getLogger(HabitanteDAO_ConsultasCRUD.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
+            return new DefaultTableModel(
+                    new Object[][]{
+                        
+                    },new Object[]{
+                        "algo","salio","muy","mal"
+                });
         }
     }
 }
